@@ -1,12 +1,11 @@
 # 图片批量压缩后批量上传
 #### 前端采用jquery的ajax，利用XMLHttpRequest可以发送二进制的功能将要上传的图片经过canvas压缩后上传到服务器
 > 前端 用到 Uini8Array Blob FormData等
-`var sendData = [];
+`
+var sendData = [];
 $('#photo').on('change', function(e) {
-
 	var file = this.files;
-
-
+	
 	for (var i = 0; i < file.length; i ++) {
 
 		getBase64Image(file[i], send);
@@ -19,8 +18,8 @@ $('#photo').on('change', function(e) {
 	}
 
 
-});
-
+});`
+`
 $('form').on('submit', function(e){
 
 	e.preventDefault();
@@ -61,7 +60,8 @@ $('form').on('submit', function(e){
 		return new Blob([u8arr], {type:mime});
 	}
 
-})
+})`
+`
 function getBase64Image(file, fn) {
 
 	var fr = new FileReader();
@@ -119,12 +119,14 @@ var multer = require('multer'); //这是一个Node.js的中间件处理multipart
 var upload = multer({dest:'./tmp'});
 
 
-
+`
+`
 router.get('/', function(req, res, next) {
 
 	res.render('movieadd', { title: 'Express' });
 });
-
+`
+`
 router.post('/', upload.array("file"), function(req, res, next) {
 
 	if(req.files==undefined){
